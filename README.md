@@ -53,23 +53,24 @@ $ freemem
 
 ###   1.4 flags can be given with the combinations
 
-​	1.1.4.1 If MAP_ANONYMOUS is given, it is anonymous mapping
-​	1.1.4.2 If MAP_ANONYMOUS is not given, it is file mapping
-​	1.1.4.3 If MAP_POPULATE is given, allocate physical page & make page table for whole mapping area.
-​	1.1.4.4 If MAP_POPULATE is not given, just record its mapping area. (If page fault occurs to according area (access to mapping area’s virtual address), allocate physical page & make page table to according page)
-​    1.1.4.5 Other flags will not be used
+​	1.4.1 If MAP_ANONYMOUS is given, it is anonymous mapping
+​	1.4.2 If MAP_ANONYMOUS is not given, it is file mapping
+​	1.4.3 If MAP_POPULATE is given, allocate physical page & make page table for whole mapping area.
+​	1.4.4 If MAP_POPULATE is not given, just record its mapping area. (If page fault occurs to according area (access to mapping area’s virtual address), allocate physical page & make page table to according page)
+​      1.4.5 Other flags will not be used
 
-    1.1.5 fd is given for file mappings, if not, it should be -1 
-    1.1.6 offset is given for file mappings, if not, it should be 0
+###   1.5 fd is given for file mappings, if not, it should be -1 
+
+###   1.6 offset is given for file mappings, if not, it should be 0
+
 ###   Return
 
 ​    Succeed: return the start address of mapping area
 ​    Failed: return 0
-
-     - It's not anonymous, but when the fd is -1
-          - The protection of the file and the prot of the parameter are different
-          - The situation in which the mapping area is overlapped is not considered
-               - If additional errors occur, we will let you know by writing notification
+   - It's not anonymous, but when the fd is -1
+   - The protection of the file and the prot of the parameter are different
+   - The situation in which the mapping area is overlapped is not considered
+   - If additional errors occur, we will let you know by writing notification
 
 ## 2. Page Fault Handler (trap)
 ###   2.1 Page Fault Handler
@@ -89,9 +90,9 @@ $ freemem
 
 ​    If faulted address has no corresponding mmap_area, return -1
 
-###   2.5.If fault was write while mmap_area is write prohibited, then return -1
+###   2.5 If fault was write while mmap_area is write prohibited, then return -1
 
-###   2.6For only one page according to faulted address
+###   2.6 For only one page according to faulted address
 
 ​    2.5.1 Allocate new physical page
 ​    2.5.2 Fill new page with 0
