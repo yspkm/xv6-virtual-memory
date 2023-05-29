@@ -150,6 +150,6 @@ The screenshot shows the output after running the xv6 operating system and execu
 
 ## Contributing 
 
-This project was developed as part of the SWE3004 Operating System course in 2022 by Yosep Kim. The source code is available on [GitHub](https://github.com/ypskm/xv6-virtual-memory).
+This project was developed as part of the SWE3004 Operating System course in 2022 by Yosep Kim. The source code is available on [GitHub](https://github.com/yspkm/xv6-virtual-memory).
 
 For any queries or issues, please raise them on the repository or reach out to the developer. Your contributions to improving this implementation are most welcome.
